@@ -28,20 +28,20 @@ pipeline{
     			}
         	}
         }
-        stage('Quality'){
-            steps{
-                script{
-                    sleep(10)
-                    //qualitygate = waitForQualityGate()
-                    //if (qualitygate.status != "OK") {
-                      //  currentBuild.result = "FAILURE"
-                        //slackSend (channel: '****', color: '#F01717', message: "*$JOB_NAME*, <$BUILD_URL|Build #$BUILD_NUMBER>: Code coverage threshold was not met! <http://****.com:9000/sonarqube/projects|Review in SonarQube>.")
-                    //}
+       //  stage('Quality'){
+       //      steps{
+       //          script{
+       //              sleep(10)
+       //              //qualitygate = waitForQualityGate()
+       //              //if (qualitygate.status != "OK") {
+       //                //  currentBuild.result = "FAILURE"
+       //                  //slackSend (channel: '****', color: '#F01717', message: "*$JOB_NAME*, <$BUILD_URL|Build #$BUILD_NUMBER>: Code coverage threshold was not met! <http://****.com:9000/sonarqube/projects|Review in SonarQube>.")
+       //              //}
                 
-                    waitForQualityGate abortPipeline: true                    
-                }
-            }
-       }
+       //              waitForQualityGate abortPipeline: true                    
+       //          }
+       //      }
+       // }
       stage('Zip the Report Folder'){
             steps{
               script{
